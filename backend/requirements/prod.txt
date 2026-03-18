@@ -1,0 +1,27 @@
+# DocAgent — production (includes ingestion, queue, AI)
+# Install: pip install -r requirements/base.txt -r requirements/prod.txt
+
+-r base.txt
+
+# Ingestion
+pymupdf>=1.24.0
+python-docx>=1.1.0
+pytesseract>=0.3.10
+langchain-text-splitters>=0.3.0
+openai>=1.55.0
+
+# Queue
+aiokafka>=0.11.0
+celery[kafka]>=5.4.0
+
+# Redis / cache
+redis>=5.2.0
+redisvl>=0.3.0
+
+# Storage
+boto3>=1.35.0
+
+# Agent
+langgraph>=0.2.0
+langchain-openai>=0.2.0
+langchain-core>=0.3.0
