@@ -38,6 +38,18 @@ uvicorn app.main:app --reload --port 8000
 - **infra/** — docker-compose, Prometheus, (future K8s)
 - **scripts/** — check_agent_progress.py, (future seed scripts)
 
+## Phase 2 — Ingestion (optional worker)
+
+After upload, process documents with either:
+
+1. **Kafka consumer** (processes from Kafka):  
+   `cd backend && PYTHONPATH=. python -m workers.kafka_consumer`
+
+2. **Celery worker** (processes from Redis; upload endpoint also enqueues to Celery):  
+   `cd backend && celery -A workers.tasks worker -Q ingestion -c 2 --loglevel=info`
+
+Ensure Kafka (and Redis for Celery) are running via `docker compose -f infra/docker-compose.yml up -d`.
+
 ## Progress
 
 Run `python scripts/check_agent_progress.py` to see completion and next task.

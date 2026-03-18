@@ -35,7 +35,7 @@ def create_access_token(
         "sub": str(sub),
         "org_id": str(org_id),
         "role": role,
-        "exp": expire,
+        "exp": int(expire.timestamp()),
     }
     return jwt.encode(
         payload,

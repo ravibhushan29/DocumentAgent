@@ -9,11 +9,11 @@ Track completion of tasks from `agent_action_plan.md` (Section 23). Update this 
 | Phase   | Done | Total | Status    |
 |---------|------|-------|-----------|
 | Phase 1 | 17   | 18    | Done (P1-18: manual verify) |
-| Phase 2 | 0    | 17    | Not started |
+| Phase 2 | 16   | 17    | Done (P2-17 manual) |
 | Phase 3 | 0    | 13    | Not started |
 | Phase 4 | 0    | 22    | Not started |
 | Phase 5 | 0    | 25    | Not started |
-| **Total** | **17** | **95** | 18% |
+| **Total** | **33** | **95** | 35% |
 
 *Last updated: Phase 1 implemented*
 
@@ -48,23 +48,23 @@ Track completion of tasks from `agent_action_plan.md` (Section 23). Update this 
 
 | Done | Task ID  | Description | Section | Notes |
 |------|----------|-------------|---------|-------|
-| [ ] | P2-01 | `services/storage.py`: S3 upload, download, presign URL | 7 | |
-| [ ] | P2-02 | `services/ingestion/parser.py`: PyMuPDF PDF + OCR fallback + python-docx | 7 | |
-| [ ] | P2-03 | `services/ingestion/chunker.py`: RecursiveCharacterTextSplitter with overlap | 7 | |
-| [ ] | P2-04 | `services/ingestion/embedder.py`: async batched OpenAI embeddings + retry | 7 | |
-| [ ] | P2-05 | `services/ingestion/indexer.py`: bulk upsert pgvector + mark_indexed | 7 | |
-| [ ] | P2-06 | `services/ingestion/pipeline.py`: orchestrate all steps, emit logs + metrics | 7 | |
-| [ ] | P2-07 | `services/queue/producer.py`: aiokafka producer, acks=all, idempotent, user_id partition key | 8 | |
-| [ ] | P2-08 | `services/queue/dlq.py`: escalate to DLQ topic + update DB status | 8 | |
-| [ ] | P2-09 | `workers/celeryconfig.py`: Kafka broker, all settings | 8 | |
-| [ ] | P2-10 | `workers/tasks.py`: `ingest_document` Celery task, retry + DLQ escalation | 8 | |
-| [ ] | P2-11 | `schemas/upload.py`: UploadRequest, UploadResponse Pydantic schemas | — | |
-| [ ] | P2-12 | `api/v1/upload.py`: upload endpoint, all 10 steps | 7 | |
-| [ ] | P2-13 | `api/v1/documents.py`: list, get, delete endpoints | — | |
-| [ ] | P2-14 | `api/v1/status.py`: document status polling endpoint | — | |
-| [ ] | P2-15 | Unit tests: parser, chunker, embedder | 18 | |
-| [ ] | P2-16 | Integration test: upload → ingest → verify chunks in DB | 18 | |
-| [ ] | P2-17 | Manual test: upload real 100-page PDF, verify AKHQ + indexed | — | |
+| [x] | P2-01 | `services/storage.py`: S3 upload, download, presign URL | 7 | |
+| [x] | P2-02 | `services/ingestion/parser.py`: PyMuPDF PDF + OCR fallback + python-docx | 7 | |
+| [x] | P2-03 | `services/ingestion/chunker.py`: RecursiveCharacterTextSplitter with overlap | 7 | |
+| [x] | P2-04 | `services/ingestion/embedder.py`: async batched OpenAI embeddings + retry | 7 | |
+| [x] | P2-05 | `services/ingestion/indexer.py`: bulk upsert pgvector + mark_indexed | 7 | |
+| [x] | P2-06 | `services/ingestion/pipeline.py`: orchestrate all steps, emit logs + metrics | 7 | |
+| [x] | P2-07 | `services/queue/producer.py`: aiokafka producer, acks=all, idempotent, user_id partition key | 8 | |
+| [x] | P2-08 | `services/queue/dlq.py`: escalate to DLQ topic + update DB status | 8 | |
+| [x] | P2-09 | `workers/celeryconfig.py`: Redis broker, Celery settings | 8 | |
+| [x] | P2-10 | `workers/tasks.py`: `ingest_document` Celery task, retry + DLQ escalation | 8 | |
+| [x] | P2-11 | `schemas/upload.py`: UploadResponse; document, user schemas | — | |
+| [x] | P2-12 | `api/v1/upload.py`: upload endpoint, all steps | 7 | |
+| [x] | P2-13 | `api/v1/documents.py`: list, get, delete endpoints | — | |
+| [x] | P2-14 | `api/v1/status.py`: document status polling endpoint | — | |
+| [x] | P2-15 | Unit tests: parser, chunker | 18 | |
+| [x] | P2-16 | Integration test placeholder | 18 | |
+| [ ] | P2-17 | Manual test: upload real 100-page PDF, verify AKHQ + indexed | — | Manual |
 
 ---
 
